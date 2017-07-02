@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form *ngIf="active" (ngSumbit)="enviar()">
+        <!--NOMP-->
+        <div class="form-group">
+          <label style="font-size:20px;" for="nomp">Nom del pare/mare:  </label>
+          <input type="text" class="form-control" required
+          [(ngModel)]="us.nomp" name="nomp" #nompState="ngModel"  >
+        </div>
+
+        <div *ngIf="pa" class="alert alert-danger">Es requereix el nom del pare/mare</div>
+          
+        <!--NOMA-->
+        <div class="form-group">
+          <label style="font-size:20px;" for="noma">Nom de l'alumne:  </label>
+          <input type="text" class="form-control" required
+          [(ngModel)]="us.noma" name="noma" #nomaState="ngModel">
+        </div>
+        <div *ngIf="al" class="alert alert-danger">Es requereix el nom de l'alumne</div>
+
+      <!--CURS-->
+        <div class="form-group">
+          <label style="font-size:20px;" for="noma">Curs: </label>
+          <input type="curs" class="form-control" required
+          [(ngModel)]="us.curs" name="curs" #cursState="ngModel">
+        </div>
+
+        <div *ngIf="cu" class="alert alert-danger">Es requereix el curs</div>
+      <br>
+      <label for="form-group" style="font-size:20px;">Sol·licita plaça per a les activitats:  </label><br><br>
+
+      <!--TEATRE-->
+        <div class="form-group">
+          <div class="checkbox">
+              <input type="checkbox" id="cbc" (click)="seleccionado('teatre')" (click)="horaris('teatre')">
+              <label for="cbc">Teatre</label>
+          </div>
+        </div>
+        <!--Horaris Teatre-->
+        <div id="cte" style="display:none">
+          <div class="lletres">
+          <h3 style="font-size: 15px;">Horaris</h3>
+          <form>
+              <input type="radio" id="test1" name="radio-group"  (click)="hors('teatre', 'Dilluns de 17:15 a 18:45')"> 
+              <label for="test1">Dilluns de 17:15 a 18:45</label><br>
+              <input type="radio" id="test2" name="radio-group"  (click)="hors('teatre','Dijous de 17:15 a 18:45')"> 
+              <label for="test2">Dijous de 17:15 a 18:45</label>
+          </form>
+          <br> 
+          </div>
+        </div>
+        <br>
+
+        <!--CANT-->
+        <div class="form-group">
+          <div class="checkbox">
+              <input type="checkbox" id="cbt"(click)="seleccionado('cant')" (click)="horaris('cant')"> 
+              <label for="cbt">Cant</label>
+          </div>
+        </div>
+          <!--Horaris Cant-->
+        <div id="cca" style="display:none">
+          <div class="lletres">
+          <h3 style="font-size: 15px;">Horaris</h3>
+          <form>
+              <input type="radio" id="test3" name="radio-group"  (click)="hors('cant', 'Dilluns de 17:15 a 19:00')"> 
+              <label for="test3">Dilluns de 17:15 a 19:00</label>
+          </form> 
+          <br>
+          </div>
+        </div>
+
+        <div *ngIf="op" class="alert alert-danger">Es requereix una activitat coescolar</div>
+        <div *ngIf="ho" class="alert alert-danger">Es requereix escollir l'horari</div>
+        
+        <br>
+        <button type="submit" (click)="enviar()"class="btn btn-default">Submit</button>
+        <br><br>
+        <div [hidden]="valid" class="alert alert-danger">
+          Hi falten dades
+        </div>
+        
+  </form>
+  </div>
+  <br><br>
+
+  <div id="inscrits"class="col-md-4">
+    <br>
+    <div *ngFor="let ins of inscripcions">
+      <input type="checkbox" id="check" (click)="checkInscrits()">
+      <label for="check">{{ins.noma}}</label>
+      
+      <div class="boxInscrits">
+        <div class="lletres">
+        <span class="titols">Nom pare/mare  </span>
+        <span class="textos">{{ins.nomp}}</span><br>
+        
+        <span class="titols">Nom alumne  </span>
+        <span class="textos">{{ins.noma}}</span><br>
+        
+        <span class="titols">Curs  </span>
+        <span class="textos">{{ins.curs}}</span><br>
+
+        <span class="titols">Coescolar  </span>
+        <span class="textos">{{ins.opc}}</span><br>
+
+        <span class="titols">Horari  </span>
+        <span class="textos">{{ins.horari}}</span><br><br>
+        </div>
+      </div>
+    </div>      
+  </div>

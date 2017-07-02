@@ -1,0 +1,208 @@
+.row{
+  padding:10px;
+}
+.salt{
+  height: 20px;
+}
+
+h3{
+  font-weight: bold;
+}
+#cte {
+  background-color:#dbdbdb;
+}
+#cca {
+  background-color:#dbdbdb;
+}
+
+/*radiobutton*/
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #70b7ff;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/*fi radiobutton*/
+
+/*Botons */
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: #2d2d2d;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #606060;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*fi Botóns*/
+
+/*boto inscrits*/
+
+input[type="checkbox"].check { display: none; }
+
+input[type="checkbox"].check + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: #2d2d2d;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"].check + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"].check + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #606060;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"].check:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*fi boto inscrits*/
+
+
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+  border-color: #42A948; /* green */
+}
+
+
+
+.form-control {
+  border-left: 5px solid #3d3d3d ; /* red */
+  border-color:  #3d3d3d ; /* red */
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #bababa ;
+}
+
+
+.boxInscrits{
+  display:none;
+  background-color: #b1c6d1;
+  opacity:0.8;
+}
+
+#inscrits{
+  display:none;
+  border-left-width:50px;
+  border-left: 5px solid #3d3d3d ; /* red */
+  border-color:  #3d3d3d ; /* red */
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #bababa ;
+  background-color:#d3d3d3;
+}
+
+.titols{
+  font-weight: bold;
+  font-size:13px;
+}
+.textos{
+  font-size:12px;
+}
+.lletres{
+  padding: 20px;
+}
+.col-md-4{
+  margin-left:90px;
+}
